@@ -19,9 +19,11 @@
                 @foreach ($featuredJobs as $job)
                     <x-job-card :$job />
                 @endforeach
-
             </div>
         </section>
+
+
+
 
         {{-- Tags --}}
         <section>
@@ -44,11 +46,6 @@
             @endforeach
 
         </div>
-
-
-
-
-
 
     </div>
 
