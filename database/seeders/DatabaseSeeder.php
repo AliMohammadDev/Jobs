@@ -25,7 +25,7 @@ class DatabaseSeeder extends Seeder
     Employer::create([
       'user_id' => $user->id,
       'name' => 'Ali employee',
-      'logo' => 'employee-logo.jpg',
+      'logo' => 'default-employer.jpg',
     ]);
 
     // $this->call(JobSeeder::class);

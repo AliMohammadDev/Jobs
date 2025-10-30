@@ -1,7 +1,7 @@
 <x-layout>
     <x-page-heading>New Job</x-page-heading>
 
-    <x-forms.form method="POST" action="/jobs">
+    <x-forms.form method="POST" action="/jobs" hasFile>
         <x-forms.input label="Title" name="title" placeholder="CEO" />
         <x-forms.input label="Salary" name="salary" placeholder="$90,000 USD" />
         <x-forms.input label="Location" name="location" placeholder="Winter Park, Florida" />
@@ -17,6 +17,9 @@
         <x-forms.divider />
 
         <x-forms.input label="Tags (comma separated)" name="tags" placeholder="laracasts, video, education" />
+
+        <x-forms.input label="Image Job" name="image" type="file" />
+
 
         <x-forms.button>Publish</x-forms.button>
     </x-forms.form>

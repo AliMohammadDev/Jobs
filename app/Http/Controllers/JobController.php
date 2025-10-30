@@ -45,8 +45,12 @@ class JobController extends Controller
       'location' => ['required'],
       'schedule' => ['required', Rule::in(['Part Time', 'Full Time'])],
       'url' => ['required', 'active_url'],
+      'image' => ['required', 'image'],
       'tags' => ['nullable'],
     ]);
+
+    $imagePath = $request->file('image')->store('jobs', 'public');
+    $attributes['image'] = $imagePath;
 
     $attributes['featured'] = $request->has('featured');
     $job = Auth::user()->employer->jobs()->create(Arr::except($attributes, 'tags'));
@@ -56,7 +60,7 @@ class JobController extends Controller
         $job->tags($tag);
       }
     }
-    ToastMagic::success('Job added successfully!');
+    ToastMagic::success('🎉 Job added successfully!');
     return redirect('/');
   }
 
