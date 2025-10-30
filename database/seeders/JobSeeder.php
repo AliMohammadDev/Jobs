@@ -36,6 +36,7 @@ class JobSeeder extends Seeder
         'url' => 'https://techcorp.com/jobs/full-stack-developer',
         'image' => 'jobs/full-stack.jpg',
         'tags' => 'javascript,laravel,vuejs,mysql',
+        'featured' => '1',
       ],
       [
         'title' => 'Backend Developer (Laravel)',
@@ -45,6 +46,8 @@ class JobSeeder extends Seeder
         'url' => 'https://devhub.io/jobs/backend-laravel',
         'image' => 'jobs/backend-developer.jpeg',
         'tags' => 'php,laravel,api,docker',
+        'featured' => '1',
+
       ],
       [
         'title' => 'Frontend Engineer (React)',
@@ -54,6 +57,7 @@ class JobSeeder extends Seeder
         'url' => 'https://pixelstudio.com/careers/frontend-engineer',
         'image' => 'jobs/react-developer.jpeg',
         'tags' => 'react,javascript,html,css',
+        'featured' => '1',
       ],
       [
         'title' => 'Junior PHP Developer',
@@ -63,6 +67,7 @@ class JobSeeder extends Seeder
         'url' => 'https://webcraft.ca/jobs/junior-php-developer',
         'image' => 'jobs/php-developer.jpeg',
         'tags' => 'php,mysql,bootstrap,laravel',
+        'featured' => '1',
       ],
       [
         'title' => 'Mobile App Developer (Flutter)',
@@ -72,6 +77,7 @@ class JobSeeder extends Seeder
         'url' => 'https://appify.io/jobs/flutter-developer',
         'image' => 'jobs/flutter-developer.jpg',
         'tags' => 'flutter,dart,firebase,android',
+        'featured' => '1',
       ],
       [
         'title' => 'Part-Time WordPress Developer',
@@ -81,6 +87,7 @@ class JobSeeder extends Seeder
         'url' => 'https://creativeflow.net/jobs/wordpress-developer',
         'image' => 'jobs/WordPress-Developers.png',
         'tags' => 'wordpress,php,html,css',
+        'featured' => '1',
       ],
 
 

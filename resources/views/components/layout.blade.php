@@ -29,7 +29,13 @@
                 <a href="/" class="hover:text-blue-800 transition-colors duration-300">Jobs</a>
                 <a href="#" class="hover:text-blue-800 transition-colors duration-300">Careers</a>
                 <a href="#" class="hover:text-blue-800 transition-colors duration-300">Salaries</a>
-                <a href="/companies" class="hover:text-blue-800 transition-colors duration-300">Companies</a>
+                @auth
+                    @if (auth()->user()->is_admin)
+                        <a href="/companies" class="hover:text-blue-800 transition-colors duration-300">
+                            Companies
+                        </a>
+                    @endif
+                @endauth
             </div>
 
 

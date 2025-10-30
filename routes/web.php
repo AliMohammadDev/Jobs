@@ -13,10 +13,13 @@ Route::get('/jobs/create', [JobController::class, 'create'])->middleware('auth')
 Route::post('/jobs', [JobController::class, 'store'])->middleware('auth');
 
 // companies employees route
-Route::get('/companies', [CompanyController::class, 'index'])->middleware('auth');
-Route::get('/companies/{id}/edit', [CompanyController::class, 'edit'])->name('companies.edit');
-Route::put('/companies/{id}', [CompanyController::class, 'update'])->name('companies.update');
-Route::delete('/companies/{id}', [CompanyController::class, 'destroy'])->name('companies.destroy');
+Route::middleware(['auth', 'admin'])->group(function () {
+  Route::get('/companies', [CompanyController::class, 'index'])->name('companies.index');
+  Route::get('/companies/{id}/edit', [CompanyController::class, 'edit'])->name('companies.edit');
+  Route::put('/companies/{id}', [CompanyController::class, 'update'])->name('companies.update');
+  Route::delete('/companies/{id}', [CompanyController::class, 'destroy'])->name('companies.destroy');
+});
+
 
 Route::middleware('guest')->group(function () {
   Route::get('/register', [RegisteredUserController::class, 'create']);
