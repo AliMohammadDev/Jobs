@@ -1,7 +1,7 @@
 @props(['job'])
 
 <x-panel class="flex flex-col text-center">
-    <div class="self-start text-sm text-gray-500">{{ $job->employer->name }}</div>
+    <div class="self-start text-sm text-gray-500">{{ $job->employer->name ?? 'Unknown Employer' }}</div>
 
     @if ($job->image)
         <img src="{{ asset('storage/' . $job->image) }}" alt="{{ $job->title }}"

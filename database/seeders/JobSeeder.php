@@ -139,10 +139,6 @@ class JobSeeder extends Seeder
         'tags' => 'machine-learning, python, pytorch, deep-learning',
         'image' => 'jobs/AI-Engineer-(Pytorch).png',
       ],
-
-
-
-
     ];
 
     foreach ($jobs as $jobData) {
