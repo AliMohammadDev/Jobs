@@ -56,8 +56,11 @@ class JobController extends Controller
     $job = Auth::user()->employer->jobs()->create(Arr::except($attributes, 'tags'));
 
     if ($attributes['tags'] ?? false) {
-      foreach (explode(',', $attributes['tags']) as $tag) {
-        $job->tags($tag);
+      foreach (explode(',', $attributes['tags']) as $tagName) {
+        $tag = Tag::firstOrCreate([
+          'name' => trim($tagName),
+        ]);
+        $job->tags()->syncWithoutDetaching([$tag->id]);
       }
     }
     ToastMagic::success('🎉 Job added successfully!');

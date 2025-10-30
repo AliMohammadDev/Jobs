@@ -2,7 +2,14 @@
 <x-panel class="flex gap-x-6">
 
     <div>
-        <x-employer-logo :width="100" />
+        {{-- <x-employer-logo :width="100" /> --}}
+        @if ($job->employer->logo)
+            <img src="{{ asset('storage/' . $job->employer->logo) }}" class="rounded-md" style="width:50px"
+                alt="{{ $job->employer->name }}">
+        @else
+            <img src="{{ asset('images/default-employer.jpg') }}" class="rounded-md" style="width:50px"
+                alt="Default Employer Logo">
+        @endif
     </div>
 
     <div class="flex-1 flex flex-col">
